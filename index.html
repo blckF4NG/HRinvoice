@@ -42,31 +42,23 @@
     "use strict";
 
     const initialConsignees = [
-      { name: "BAPS SWAMINARAYAN SANSTHA", address: "AKSHARDHAM MANDIR, PRAMUKH SWAMI MAHARAJ MARG, DELHI - 110092", gst: "N/A", stateCode: ""},
-      { name: "IndoThai", address: "Barnali Complex, LGBI Airport, Guwahati Airport, Guwahati - 781015", gst: "18AAJCG5208N1Z"},
-      { name: "SHUBHASHISH WEALTH MANAGEMENT CONSULTANTS LLP", address: "3rd Floor, Shubhashish Corporate Tower, 12-13 Rathore Nagar, Queens Road, Vaishali Nagar, Jaipur", gst: "08ADQFS2451N1ZE"},
-      { name: "BKJ Airports (Dehradun) Private Limited"},
-      { name: "M/S INDOTHAI PUNE PRIVATE LIMITED", address: "1st Floor, S No 164/2B, Pt 44. Srushti Apartment, Adarsh Colony, Tingre Nagar, Yerwada, Pune - 411006", gst: "27AAGCI0140N1ZK"},
-      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Departure Terminal, Unit No. 5, Sanganer, Airport, Airport Road, Sanganer, jaipur, Rajasthan - 302029", gst: "08AAJCG5208N1Z8"},
-      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Jaipur International Airport, Airport Road, Sanganer, Jaipur, Rajasthan - 302029", gst: ""},
-      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "2nd Floor, Room No S2, Silver Arcade, 5 JBS Halden Avenue, Kolkata, West Bengal - 700105", gst: "19AAGCI0080B1ZZ"},
-      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "Netaji Subhash Chandra Bose International Airport, Airport Service Rd, International Airport, Dum Dum, Kolkata, West Bengal - 700052", gst: ""},
-      { name: "INDOTHAI BHUBANESHWAR PVT. LTD.", address: "GROUND FLOOR, VIM-610, SAILASHREE VIHAR, CHANDRA SHEKHARPUR, BHUBANESHWAR, KHORDH, ODISHA- 751021", gst: "21AAGCI0848D1Z2"},
-      { name: " INDOTHAI BHUBANESHWAR PRIVATE LIMITED", address: "Biju Patnaik International Airport, Aerodrome Area, Bhubaneshwar Airport, Odisha - 751020", gst: ""},
+      { name: "BAPS SWAMINARAYAN SANSTHA", address: "AKSHARDHAM MANDIR, PRAMUKH SWAMI MAHARAJ MARG, DELHI - 110092", gst: "N/A", stateCode: "07"},
+      { name: "IndoThai", address: "Barnali Complex, LGBI Airport, Guwahati Airport, Guwahati - 781015", gst: "18AAJCG5208N1Z", stateCode: "18"},
+      { name: "SHUBHASHISH WEALTH MANAGEMENT CONSULTANTS LLP", address: "3rd Floor, Shubhashish Corporate Tower, 12-13 Rathore Nagar, Queens Road, Vaishali Nagar, Jaipur", gst: "08ADQFS2451N1ZE", stateCode: "08"},
+      { name: "M/S INDOTHAI PUNE PRIVATE LIMITED", address: "1st Floor, S No 164/2B, Pt 44. Srushti Apartment, Adarsh Colony, Tingre Nagar, Yerwada, Pune - 411006", gst: "27AAGCI0140N1ZK", stateCode: "27"},
+      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Departure Terminal, Unit No. 5, Sanganer, Airport, Airport Road, Sanganer, jaipur, Rajasthan - 302029", gst: "08AAJCG5208N1Z8", stateCode: "08"},
+      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "2nd Floor, Room No S2, Silver Arcade, 5 JBS Halden Avenue, Kolkata, West Bengal - 700105", gst: "19AAGCI0080B1ZZ", stateCode: "19"},
+      { name: "INDOTHAI BHUBANESHWAR PVT. LTD.", address: "GROUND FLOOR, VIM-610, SAILASHREE VIHAR, CHANDRA SHEKHARPUR, BHUBANESHWAR, KHORDH, ODISHA- 751021", gst: "21AAGCI0848D1Z2", stateCode: "21"},
     ];
 
     const initialBuyers = [
-      { name: "BAPS SWAMINARAYAN SANSTHA", address: "AKSHARDHAM MANDIR, PRAMUKH SWAMI MAHARAJ MARG, DELHI - 110092", gst: "N/A", stateCode: "" },
-      { name: "IndoThai", address: "Barnali Complex, LGBI Airport, Guwahati Airport, Guwahati - 781015", gst: "18AAJCG5208N1Z"},
-      { name: "SHUBHASHISH WEALTH MANAGEMENT CONSULTANTS LLP", address: "3rd Floor, Shubhashish Corporate Tower, 12-13 Rathore Nagar, Queens Road, Vaishali Nagar, Jaipur", gst: "08ADQFS2451N1ZE"},
-      { name: "BKJ Airports (Dehradun) Private Limited"},
-      { name: "M/S INDOTHAI PUNE PRIVATE LIMITED", address: "1st Floor, S No 164/2B, Pt 44. Srushti Apartment, Adarsh Colony, Tingre Nagar, Yerwada, Pune - 411006", gst: "27AAGCI0140N1ZK"},
-      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Departure Terminal, Unit No. 5, Sanganer, Airport, Airport Road, Sanganer, jaipur, Rajasthan - 302029", gst: "08AAJCG5208N1Z8"},
-      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Jaipur International Airport, Airport Road, Sanganer, Jaipur, Rajasthan - 302029", gst: ""},
-      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "2nd Floor, Room No S2, Silver Arcade, 5 JBS Halden Avenue, Kolkata, West Bengal - 700105", gst: "19AAGCI0080B1ZZ"},
-      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "Netaji Subhash Chandra Bose International Airport, Airport Service Rd, International Airport, Dum Dum, Kolkata, West Bengal - 700052", gst: ""},
-      { name: "INDOTHAI BHUBANESHWAR PVT. LTD.", address: "GROUND FLOOR, VIM-610, SAILASHREE VIHAR, CHANDRA SHEKHARPUR, BHUBANESHWAR, KHORDH, ODISHA- 751021", gst: "21AAGCI0848D1Z2"},
-      { name: " INDOTHAI BHUBANESHWAR PRIVATE LIMITED", address: "Biju Patnaik International Airport, Aerodrome Area, Bhubaneshwar Airport, Odisha - 751020", gst: ""},
+      { name: "BAPS SWAMINARAYAN SANSTHA", address: "AKSHARDHAM MANDIR, PRAMUKH SWAMI MAHARAJ MARG, DELHI - 110092", gst: "N/A", stateCode: "07" },
+      { name: "IndoThai", address: "Barnali Complex, LGBI Airport, Guwahati Airport, Guwahati - 781015", gst: "18AAJCG5208N1Z", stateCode: "18"},
+      { name: "SHUBHASHISH WEALTH MANAGEMENT CONSULTANTS LLP", address: "3rd Floor, Shubhashish Corporate Tower, 12-13 Rathore Nagar, Queens Road, Vaishali Nagar, Jaipur", gst: "08ADQFS2451N1ZE", stateCode: "08"},
+      { name: "M/S INDOTHAI PUNE PRIVATE LIMITED", address: "1st Floor, S No 164/2B, Pt 44. Srushti Apartment, Adarsh Colony, Tingre Nagar, Yerwada, Pune - 411006", gst: "27AAGCI0140N1ZK", stateCode: "27"},
+      { name: "M/S GSEC INDOTHAI GROUND HANDLING PVT LTD", address: "Departure Terminal, Unit No. 5, Sanganer, Airport, Airport Road, Sanganer, jaipur, Rajasthan - 302029", gst: "08AAJCG5208N1Z8", stateCode: "08"},
+      { name: "INDOTHAI KOLKATA PRIVATE LIMITED", address: "2nd Floor, Room No S2, Silver Arcade, 5 JBS Halden Avenue, Kolkata, West Bengal - 700105", gst: "19AAGCI0080B1ZZ", stateCode: "19"},
+      { name: "INDOTHAI BHUBANESHWAR PVT. LTD.", address: "GROUND FLOOR, VIM-610, SAILASHREE VIHAR, CHANDRA SHEKHARPUR, BHUBANESHWAR, KHORDH, ODISHA- 751021", gst: "21AAGCI0848D1Z2", stateCode: "21"},
     ];
 
     const initialGoods = [
@@ -119,7 +111,7 @@
 ];
 
     const initialTransport = [
-      { name: "Chirag Transport UP14PT8478", destination: "Jewar International Airport" },
+      { name: "N/A", destination: "N/A" },
     ];
 
     const initialOrders = ["As per mail"];
@@ -1100,3 +1092,4 @@ React.createElement("strong", null, "₹ ", numberToWordsIndian(roundedTotalAmou
   </script>
 </body>
 </html>
+
