@@ -154,9 +154,9 @@
       const [invoiceType, setInvoiceType] = React.useState("Invoice No");
       const [date, setDate] = React.useState(formattedToday);      
     
-      const [ewayBillNo, setEwayBillNo] = React.useState("");
-      const [orderDated, setOrderDated] = React.useState("");
-      const [dispatchFrom, setDispatchFrom] = React.useState("");
+      const [ewayBillNo, setEwayBillNo] = React.useState("N/A");
+      const [orderDated, setOrderDated] = React.useState("N/A");
+      const [dispatchFrom, setDispatchFrom] = React.useState("Sonipat");
       const [consignee, setConsignee] = React.useState(initialConsignees[0]);
       const [buyer, setBuyer] = React.useState(initialBuyers[0]);
       const [orderNo, setOrderNo] = React.useState(initialOrders[0]);
@@ -172,7 +172,7 @@
       const [showGoodsForm, setShowGoodsForm] = React.useState(false);
       const [showTransportForm, setShowTransportForm] = React.useState(false);
       const [showOrderForm, setShowOrderForm] = React.useState(false);
-      const [deliveryNote, setDeliveryNote] = React.useState("");
+      const [deliveryNote, setDeliveryNote] = React.useState("N/A");
 
       
       const visibleItems = items.filter(item => item.quantity > 0);
@@ -339,7 +339,7 @@ React.createElement(
       value: dispatchFrom,
       onChange: (e) => setDispatchFrom(e.target.value),
       className: "mt-1 p-2 border rounded w-full",
-      placeholder: "Enter Dispatch From"
+      placeholder: "Sonipat"
     })
   )
 ),
@@ -368,11 +368,6 @@ React.createElement(
               )
             ),
 
-              React.createElement(
-  "button",
-  { onClick: () => setShowBuyerForm(true), className: "mt-2 text-blue-600 hover:underline" },
-  "Add/Edit Buyer"
-),
 
             React.createElement(
               "div",
@@ -388,8 +383,14 @@ React.createElement(
                 buyers.map((b, index) =>
                   React.createElement("option", { key: index, value: b.name }, b.name)
                 )
-              )
+              ),
+              React.createElement(
+  "button",
+  { onClick: () => setShowBuyerForm(true), className: "mt-2 text-blue-600 hover:underline" },
+  "Add/Edit Buyer"
+)
             )
+            
           ),
           React.createElement(
             "div",
@@ -1092,4 +1093,3 @@ React.createElement("strong", null, "₹ ", numberToWordsIndian(roundedTotalAmou
   </script>
 </body>
 </html>
-
