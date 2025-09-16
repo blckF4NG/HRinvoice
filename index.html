@@ -821,6 +821,9 @@ React.createElement(
                   React.createElement("br"),
                   "Plot No 49, Kami Road, Asadpur Nandnaur, Kami-Ganur Road Sonipat, Haryana - 131027",
                   React.createElement("br"),
+                  React.createElement("br"),
+                  "State Code: 06",
+                  React.createElement("br"),
                   React.createElement("strong", null, "06ABOCS1545E1ZC")
                 ),
                 React.createElement(
@@ -887,7 +890,7 @@ React.createElement(
                 null,
                 React.createElement("td", null),
                 React.createElement("td", null, "Dispatched Through", React.createElement("br"), React.createElement("strong", null, transport.name)),
-                React.createElement("td", null, "Destination", React.createElement("br"), React.createElement("strong", null, transport.destination))
+                React.createElement("td", null, "Destination/Place of Supply", React.createElement("br"), React.createElement("strong", null, transport.destination))
               ),
               React.createElement(
                 "tr",
@@ -1002,7 +1005,7 @@ React.createElement("strong", null, "₹ ", numberToWordsIndian(roundedTotalAmou
                 null,
                 React.createElement("th", null, "HSN/SAC"),
                 React.createElement("th", null, "Taxable Value"),
-                React.createElement("th", { colSpan: "2" }, "Integrated Tax"),
+                React.createElement("th", null, "Integrated Tax"),
                 React.createElement("th", null, "Total Tax Amount")
               ),
               React.createElement(
@@ -1010,7 +1013,7 @@ React.createElement("strong", null, "₹ ", numberToWordsIndian(roundedTotalAmou
                 null,
                 React.createElement("th", null),
                 React.createElement("th", null),
-                React.createElement("th", null, "Rate"),
+                
                 React.createElement("th", null, "Amount"),
                 React.createElement("th", null)
               )
@@ -1025,18 +1028,19 @@ React.createElement("strong", null, "₹ ", numberToWordsIndian(roundedTotalAmou
                 null,
                 visibleItems.map(item => item.hsn).filter((v, i, a) => a.indexOf(v) === i).join(" / ")
           ),
-                React.createElement("td", null, formatIndianNumber(taxableValue)),
-                React.createElement("td", null, visibleItems[0] ? visibleItems[0].gstRate : "", "%"),
-                React.createElement("td", null, formatIndianNumber(taxAmount))
+                React.createElement("td", { style: { textAlign: "center" } }, formatIndianNumber(taxableValue)),
+                
+                React.createElement("td", { style: { textAlign: "center" } }, formatIndianNumber(taxAmount)),
+                React.createElement("th", null)
               ),
               React.createElement(
                 "tr",
                 null,
                 React.createElement("td", null, React.createElement("strong", null, "Total")),
-                React.createElement("td", null, React.createElement("strong", null, formatIndianNumber(taxableValue))),
-                React.createElement("td", null),
-                React.createElement("td", null, React.createElement("strong", null, formatIndianNumber(taxAmount))),
-                React.createElement("td", null, React.createElement("strong", null, formatIndianNumber(taxAmount)))
+                React.createElement("td", { style: { textAlign: "center" } }, React.createElement("strong", null, formatIndianNumber(taxableValue))),
+                
+                React.createElement("td", { style: { textAlign: "center" } }, React.createElement("strong", null, formatIndianNumber(taxAmount))),
+                React.createElement("td", { style: { textAlign: "center" } }, React.createElement("strong", null, formatIndianNumber(taxAmount)))
               )
             )
           ),
